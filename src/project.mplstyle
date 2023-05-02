@@ -1,0 +1,9 @@
+lines.linewidth : 2
+font.family : serif
+axes.prop_cycle: cycler('color', ['010505', 'd73027', 'fc8d59', 'fee090', '91bfdb', '4575b4'])
+axes.grid : True
+grid.linestyle : dashed
+grid.alpha : 0.9
+xtick.minor.visible : True
+ytick.minor.visible : True
+savefig.bbox : tight
