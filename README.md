@@ -1,4 +1,4 @@
-# Did Tico ride or surf the North Brazil Current?
+# Did Tico swim or surf the North Brazil Current?
 A study case of a manatee that got lost after release
 
 
