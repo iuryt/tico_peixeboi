@@ -36,3 +36,17 @@ In addition to the sources mentioned, we will be archiving all datasets on Zenod
 ## Python environment
 
 This project uses version 0.1.0 of the Coringa environment. For more details, visit the GitHub repository: https://github.com/iuryt/env_coringa.
+
+## Issues and Questions
+
+### Reporting Issues
+If you encounter any bugs or issues with the code/repository, please [open an issue](https://github.com/iuryt/tico_peixeboi/issues) to report it. When creating an issue, try to provide a detailed description of the problem, steps to reproduce it, and any relevant information that could help in troubleshooting.
+
+### Questions
+For general questions, discussions, or getting help on a particular topic, we encourage you to use [GitHub Discussions](https://github.com/iuryt/tico_peixeboi/discussions). This is a great platform to ask questions, share insights, or discuss best practices with the community.
+
+Ask a question: If you're unsure about something, want clarification, or are experiencing general issues that aren't bugs with the repository, just start a new discussion in the Q&A category.
+
+Share ideas: If you have ideas, feedback, or any thoughts that you'd like to share with the community, you're welcome to start a new discussion in the Ideas category.
+
+Remember, when participating in discussions, please be respectful to others.
