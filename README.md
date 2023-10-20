@@ -1,6 +1,6 @@
 # Surfing the Currents: Analyzing Tico's Journey
 
-This repository contains the data analysis and related codes used for the study "Surfing the currents: the longest distance traveled by a rehabilitated and released West Indian manatee (Trichechus manatus)" submitted to [Biological Conservation journal](https://www.sciencedirect.com/journal/biological-conservation).
+This repository contains the data analysis and related codes used for the study "Surfing the currents: the longest distance traveled by a rehabilitated and released West Indian manatee (Trichechus manatus)" submitted to Animal Conservation Journal.
 
 [![Watch the video](https://img.youtube.com/vi/SaIj6LsaQ_o/maxresdefault.jpg)](https://youtu.be/SaIj6LsaQ_o)
 
