@@ -1,6 +1,6 @@
 lines.linewidth : 2
 font.family : serif
-axes.prop_cycle: cycler('color', ['010505', 'd73027', 'fc8d59', 'fee090', '91bfdb', '4575b4'])
+axes.prop_cycle: cycler('color', ['010505', 'D81B60', 'FFC107', '4575b4', 'fc8d59', 'fee090', '91bfdb'])
 axes.grid : True
 grid.linestyle : dashed
 grid.alpha : 0.9
