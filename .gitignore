@@ -1,6 +1,7 @@
 data/*
 img/*
 src/*.out
+src/*credentials*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
