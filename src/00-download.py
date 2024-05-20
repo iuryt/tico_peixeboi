@@ -5,24 +5,20 @@ import getpass
 from tqdm import tqdm
 from glob import glob
 
-import motuclient
+
+from earthaccess import Auth, DataCollections, DataGranules, Store
+
+import copernicusmarine
+
+# this file is in .gitignore
+# it basically has a dictionary like this
+# credentials = dict(username = "username", password = "password")
+from copernicus_credentials import credentials
+
 from earthaccess import Auth, DataCollections, DataGranules, Store
 
 
-# Class to manage Motu Options as an object
-class MotuOptions:
-    def __init__(self, attrs: dict):
-        super(MotuOptions, self).__setattr__("attrs", attrs)
 
-    def __setattr__(self, k, v):
-        self.attrs[k] = v
-
-    def __getattr__(self, k):
-        try:
-            return self.attrs[k]
-        except KeyError:
-            return None
-        
 
 # OSCAR Data Download
 oscar_output_dir = "../data/OSCAR_L4_OC_NRT_V2.0"
@@ -52,32 +48,24 @@ ds.to_netcdf("../data/HYCOM/GLBy008expt_93.nc")
 
 # NEMO Data Processing
 
-# Get user credentials for NEMO data access
-USERNAME = input('Enter your username: ')
-PASSWORD = getpass.getpass('Enter your password: ')
-
-# Request and download NEMO data for each month (July, August, September)
-for mo in tqdm([7,8,9]):
-    data_request_options_dict_manual = {
-        "service_id": "GLOBAL_ANALYSISFORECAST_PHY_001_024-TDS",
-        "product_id": "cmems_mod_glo_phy_anfc_merged-uv_PT1H-i",
-        "date_min": f"2022-{mo:02.0f}-01 00:00:00",
-        "date_max": f"2022-{mo+1:02.0f}-01 00:00:00",
-        "longitude_min": -69.34961519949772,
-        "longitude_max": -30.162162074497736,
-        "latitude_min": -10.27691380440848,
-        "latitude_max": 21.4641223563058,
-        "depth_min": 0.49402499198913574,
-        "depth_max": 0.49402499198913574,
-        "variable": ["utotal","vtotal"],
-        "motu": "https://nrt.cmems-du.eu/motu-web/Motu",
-        "out_dir": ".",
-        "out_name": f"../data/GLORYS/GLOBAL_ANALYSISFORECAST_PHY_001_024-TDS_2022_{mo:02.0f}.nc",
-        "auth_mode": "cas",
-        "user": USERNAME,
-        "pwd": PASSWORD
-    }
-    motuclient.motu_api.execute_request(MotuOptions(data_request_options_dict_manual))
+copernicusmarine.subset(
+    dataset_id = "cmems_mod_glo_phy_anfc_0.083deg_PT1H-m",
+    variables = ["thetao","so","uo","vo"],
+    minimum_longitude = -69.34,
+    maximum_longitude = -30.16,
+    minimum_latitude = -10.27,
+    maximum_latitude = 21.46,
+    start_datetime = "2022-07-01T00:00:00",
+    end_datetime = "2022-10-01T00:00:00",
+    minimum_depth = 0,
+    maximum_depth = 0.5,
+    output_filename = "GLORYS.nc",
+    output_directory = "../data/GLORYS",
+    no_metadata_cache = True,
+    overwrite_output_data = True,
+    force_download = True,
+    **credentials
+)    
 
 # SMAP Data Processing
 
